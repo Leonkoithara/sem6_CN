@@ -6,7 +6,7 @@
 
 int main()
 {
-	int shm_fd1, shm_fd2, shm_fd3, shm_fd4, shm_fd5;
+	int shm_fd1, shm_fd2, shm_fd3;
 	sem_t *wlock;
 	int *readers, *ptr;
 
