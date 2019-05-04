@@ -30,13 +30,16 @@ int main()
 	serv_addr.sin_port = htons(PORTNO);
 
 	if(connect(sockfd, (const struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0)
-		printf("Error3");
+		perror("Error3");
 
-	printf("Enter message: ");
-	gets(buff);
-	n = write(sockfd, buff, strlen(buff));
-	if(n < 0)
-		printf("Error4");
+	while(1)
+	{
+		printf("Enter message: ");
+		gets(buff);
+		n = write(sockfd, buff, strlen(buff));
+		if(n < 0)
+			printf("Error4");
+	}
 
 	return 0;
 }
